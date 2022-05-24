@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+.main {
+	display: flex;
+	height: 80vh;
+	width: 80vh;
+	background-color: #0b2434;
+	margin: 15vh;
+	align-items: center;
+	font-family: "Karla", sans-serif;
+	/* justify-content: center; */
+	/* color: #0b2434 */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background-white {
+	display: flex;
+	background-color: #e5e5e5;
+	height: 85%;
+	width: 90%;
+	margin: auto;
+	border-radius: 10px;
+	justify-content: center;
+	align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.playArea {
+	max-width: 100%;
+	max-height: 100%;
+	margin: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dice {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: 5vh;
+	margin-block: 2vh;
 }
 
-.App-link {
-  color: #61dafb;
+.text {
+	display: flex;
+	flex-direction: column;
+	/* margin-bottom: 6vh; */
+	font-size: 3vh;
+	text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text--title {
+	margin-bottom: 0%;
+}
+
+.die {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ffffff;
+	height: 9vh;
+	width: 9vh;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.die--held {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #59e391;
+	height: 9vh;
+	width: 9vh;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.die--num {
+	font-size: 5vh;
+}
+
+.button {
+	margin: 5vh;
+	font-size: 3vh;
+	font-weight: bold;
+	width: 20vh;
+	cursor: pointer;
+	padding: 1.5vh 0 1.5vh 0;
+	border-radius: 5px;
+	border: none;
+	background-color: #5035ff;
+	color: #ffffff;
+}
+
+.button:focus {
+	/* outline: none; */
+}
+
+.button:active {
+	box-shadow: inset 5px 5px 5px -3px rgba(255, 255, 255, 0.7);
+}
+
+.Die-shaking {
+	animation-name: wobble;
+	animation-duration: 1s;
+}
+
+/* https://www.geeksforgeeks.org/how-to-create-a-dice-rolling-app-using-reactjs/ */
+@keyframes wobble {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+	15% {
+		transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+	}
+	30% {
+		transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+	}
+	45% {
+		transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+	}
+	60% {
+		transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+	}
+	75% {
+		transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
 }
